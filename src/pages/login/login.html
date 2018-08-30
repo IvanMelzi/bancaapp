@@ -1,0 +1,54 @@
+<ion-content padding-top>
+  <ion-grid>
+    <form (ngSubmit)="formData()" #form="ngForm">
+      <ion-row>
+        <ion-col col-12 text-center>
+          <img id="logo" src="assets/imgs/logo.png"/>
+        </ion-col>
+        <ion-col col-12>
+          <ion-item>
+            <ion-label floating> <ion-icon name="mail" margin></ion-icon> Email: </ion-label>
+            <ion-input
+              type="email"
+              name="email"
+              id="email"
+              [(ngModel)]="user.email"
+              required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating><ion-icon name="lock" margin ></ion-icon> Password: </ion-label>
+            <ion-input
+              type="password"
+              name="password"
+              clearOnEdit
+              [(ngModel)]="user.password"
+              required></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row text-center>
+        <ion-col col-12>
+          <button
+            ion-button
+            [disabled]="!form.valid"
+            type="submit"
+            class="btn-login"
+            color="white"
+            round> Login
+          </button>
+        </ion-col>
+      </ion-row>
+    </form>
+    <ion-row text-center>
+      <ion-col col-12>
+        <button
+          ion-button
+          block
+          clear
+          class='btn-txt-white'
+          (click)="onGoToSignUp()"> No Account? Create One.
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

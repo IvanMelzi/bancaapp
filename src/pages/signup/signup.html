@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form (ngSubmit)="formData()" #form="ngForm">
+    <ion-list>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating> First Name </ion-label>
+              <ion-input type="text" [(ngModel)]="user.firstname" name="firstname" required></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col>
+            <ion-item>
+              <ion-label floating> Last Name </ion-label>
+              <ion-input type="text" [(ngModel)]="user.lastname" name="lastname" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating> Mail </ion-label>
+              <ion-input type="mail" [(ngModel)]="user.email" name="mail" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-item>
+              <ion-label floating> Password </ion-label>
+              <ion-input type="password" [(ngModel)]="user.password" name="password" required></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+    <div text-center>
+      <button ion-button
+              color="white"
+              round type="submit" [disabled]="!form.valid">Sign Up</button>
+    </div>
+  </form>
+</ion-content>
