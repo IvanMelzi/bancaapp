@@ -28,7 +28,7 @@ export class SignupPage {
     };
     console.log("data");
     console.log(data);
-    this.requestSrv.makePOST(this.url, data).then((response) => {
+    this.requestSrv.auth(this.url, data).then((response) => {
       this.presentToast('User was created successfully', true);
     }).catch((err) => {
       this.presentToast('An error has ocurred', false)
@@ -39,7 +39,7 @@ export class SignupPage {
     let toast = this.toastCtrl.create({
       message: message,
       duration: 3000,
-      position: 'top'
+      position: 'bottom'
     });
 
     toast.onDidDismiss(() => {

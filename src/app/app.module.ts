@@ -17,6 +17,7 @@ import { HTTP } from '@ionic-native/http';
 import { RequestService } from '../services/request.service';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
+import {IonicStorageModule} from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     HttpClientModule,
+    IonicStorageModule.forRoot(),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
