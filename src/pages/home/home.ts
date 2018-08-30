@@ -19,7 +19,7 @@ export class HomePage {
               public requestSrv: RequestService,
               public navParams: NavParams
               ) {
-    this.token = navParams.get('token');
+/*    this.token = navParams.get('token');
     this.requestSrv.getAccount(this.url, this.token).then((response) => {
       console.log('response');
       console.log(response);
@@ -32,7 +32,7 @@ export class HomePage {
       console.log(response);
     }).catch((err) => {
       console.log(err);
-    });
+    });*/
 
 /*    this.storage.get('userId').then((userId) => {
       let data = {

@@ -35,10 +35,11 @@ export class LoginPage {
     console.log("data");
     console.log(data);
     this.requestSrv.auth(this.url, data).then((response) => {
-      let decoded = JWT(response.token);
+      let res = response;
+      let decoded = JWT(response['token']);
       console.log(response);
-      this.storage.set('userId', decoded.id).then(() => {
-        this.navCtrl.setRoot(HomePage, {token: response.token});
+      this.storage.set('userId', decoded['id']).then(() => {
+        this.navCtrl.setRoot(HomePage, {token: response['token']});
       });
     }).catch((err) => {
       this.presentToast('An error has ocurred');

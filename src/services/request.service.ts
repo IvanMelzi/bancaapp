@@ -7,7 +7,7 @@ export class RequestService {
   constructor(private http: HttpClient ){}
 
   auth(url, data) {
-    let headers = new Headers();
+    let headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
 
     return new Promise((resolve, reject) => {
