@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ToastController, ViewController} from 'ionic-angular';
-import {RequestService} from "../../services/request.service";
+import { NavParams, ToastController, ViewController } from 'ionic-angular';
+import { RequestService } from '../../services/request.service';
 import { Storage } from '@ionic/storage';
-
 
 @Component({
   selector: 'page-new-card',
   templateUrl: 'new-card.html',
 })
+
 export class NewCardPage {
 
   url: string = 'https://mighty-refuge-81707.herokuapp.com/api/accounts';
@@ -15,10 +15,9 @@ export class NewCardPage {
   token: string = '';
 
   typeCards = [];
-  cardType = '';
+  cardType = {};
 
-  constructor(public navCtrl: NavController,
-              public params: NavParams,
+  constructor(public params: NavParams,
               public viewCtrl: ViewController,
               private storage: Storage,
               public requestSrv: RequestService,
@@ -53,8 +52,6 @@ export class NewCardPage {
 
   viewCatalogCards() {
     this.requestSrv.getCatalogs(this.urlCatalog, this.token).then((response) => {
-      console.log('response');
-      console.log(response['response']);
       response['response'].type_cards.forEach((type) => {
         this.typeCards.push(type);
       });

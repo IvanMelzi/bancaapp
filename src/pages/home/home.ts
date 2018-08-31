@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import {ModalController, NavController, NavParams, ToastController} from 'ionic-angular';
-import { Storage } from '@ionic/storage';
+import { ModalController, NavParams, ToastController } from 'ionic-angular';
 import { RequestService } from '../../services/request.service';
 import { NewCardPage } from '../new-card/new-card';
 
@@ -16,9 +15,7 @@ export class HomePage {
 
   cards = [];
 
-  constructor(public navCtrl: NavController,
-              private storage: Storage,
-              public requestSrv: RequestService,
+  constructor(public requestSrv: RequestService,
               public navParams: NavParams,
               public modalCtrl: ModalController,
               private toastCtrl: ToastController) {
@@ -28,8 +25,6 @@ export class HomePage {
 
   getMyCards() {
     this.requestSrv.getAccount(this.url, this.token).then((response) => {
-      console.log('response--');
-      console.log(response);
       response['response'].forEach((res) => {
         this.cards.push(res);
       });

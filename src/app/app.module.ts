@@ -1,24 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpClientModule } from '@angular/common/http';
+import { IonicStorageModule } from '@ionic/storage';
 
 //Pages
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { SignupPage } from '../pages/signup/signup';
+import { NewCardPage } from '../pages/new-card/new-card';
 
 //Native
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-import { HTTP } from '@ionic-native/http';
 
 //Services
 import { RequestService } from '../services/request.service';
-import {HttpModule} from "@angular/http";
-import {HttpClientModule} from "@angular/common/http";
-import {IonicStorageModule} from "@ionic/storage";
-import {NewCardPage} from "../pages/new-card/new-card";
+
 
 @NgModule({
   declarations: [

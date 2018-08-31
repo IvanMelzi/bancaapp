@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
-import {NavController, NavParams, ToastController} from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 import { UserModel } from '../../models/user.model';
 import { RequestService } from '../../services/request.service';
-import {LoginPage} from "../login/login";
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-signup',
   templateUrl: 'signup.html',
 })
+
 export class SignupPage {
 
   user: UserModel = new UserModel();
   url: string = 'https://mighty-refuge-81707.herokuapp.com/api/auth/user/create';
 
   constructor(public navCtrl: NavController,
-              public navParams: NavParams,
               public requestSrv: RequestService,
               private toastCtrl: ToastController) {
   }
@@ -26,8 +26,6 @@ export class SignupPage {
       "lastname": this.user.lastname,
       "password": this.user.password
     };
-    console.log("data");
-    console.log(data);
     this.requestSrv.auth(this.url, data).then((response) => {
       this.presentToast('User was created successfully', true);
     }).catch((err) => {
