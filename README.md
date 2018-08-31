@@ -13,7 +13,7 @@ Exam
 For local environment do:
 ```sh
 $ npm install -g ionic cordova
-$ cd bancapp
+$ cd bancaapp
 $ npm install
 $ ionic serve
 
