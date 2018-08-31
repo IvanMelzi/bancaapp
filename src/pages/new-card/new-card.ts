@@ -38,8 +38,8 @@ export class NewCardPage {
     this.storage.get('userId').then((userId) => {
       let data = {
         "userId": userId,
-        "type": this.cardType.type,
-        "name": this.cardType.name
+        "type": this.cardType['type'],
+        "name": this.cardType['name']
       };
 
       this.requestSrv.createCard(this.url, data, this.token).then((response) => {
