@@ -1,14 +1,37 @@
 <ion-header>
-  <ion-navbar>
+  <ion-toolbar color="primary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)="newCard()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
-  </ion-navbar>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-card class="credit-card">
-    <div class="card-title">World Bank</div>
-    <div class="card-subtitle">41 Listings</div>
+  <ion-title>
+    Your Cards:
+  </ion-title>
+  <ion-card class="credit-card" *ngFor="let card of cards">
+    <ion-card-title>
+      <div class="card-title">World Bank</div>
+    </ion-card-title>
+    <ion-card-header>
+      <div class="card-subtitle">{{card._id}}</div>
+    </ion-card-header>
+    <ion-card-content>
+      <p style="color: white" float-right>
+        {{card.name}}
+      </p>
+    </ion-card-content>
+    <p style="color: green">
+      Balance: {{ card.balance}}
+    </p>
+    <p style="color: blue">
+      Balance: {{ card.deposits}}
+    </p>
   </ion-card>
 </ion-content>

@@ -18,13 +18,15 @@ import { RequestService } from '../services/request.service';
 import {HttpModule} from "@angular/http";
 import {HttpClientModule} from "@angular/common/http";
 import {IonicStorageModule} from "@ionic/storage";
+import {NewCardPage} from "../pages/new-card/new-card";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    NewCardPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import {IonicStorageModule} from "@ionic/storage";
     MyApp,
     HomePage,
     LoginPage,
-    SignupPage
+    SignupPage,
+    NewCardPage
   ],
   providers: [
     StatusBar,

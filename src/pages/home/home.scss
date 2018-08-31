@@ -1,10 +1,22 @@
 page-home {
   .credit-card {
     background-color: #a4a4a4;
-    height: 15rem;
+    height: 16rem;
   }
 
   .card-title {
     color:  white;
+    font-size: 2rem;
+    padding-left: 2rem;
+  }
+
+  .card-subtitle {
+    color:  white;
+    font-size: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  p {
+    padding-left: 1rem;
   }
 }

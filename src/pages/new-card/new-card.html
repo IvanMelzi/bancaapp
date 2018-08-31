@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+
+    <ion-buttons align-items-start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text>Close</span>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-title>
+    Create New Card
+  </ion-title>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Select a card</ion-label>
+      <ion-select [(ngModel)]="cardType">
+        <ion-option *ngFor="let card of typeCards" [value]="card">{{card.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <div text-center>
+    <button ion-button
+            color="white"
+            round (click)="createCard()">Create Card</button>
+  </div>
+</ion-content>
